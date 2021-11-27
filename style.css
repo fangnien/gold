@@ -1,0 +1,701 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    src        : url(./webfont/Bayon-Regular.ttf);
+
+    font-family: 'Karma', serif;
+    src        : url(./webfont/Karma-SemiBold.ttf)
+}
+
+/* 在google fonts網頁，選取字型100、400、700，點選import複製連結，再CSS下方font-family:"Noto Sans TC"寫入 */
+
+
+/* -------------統一------------- */
+* {
+    margin                  : 0;
+    padding                 : 0;
+    box-sizing              : border-box;
+    /* 不要加邊框(border)與內距(padding) */
+    -webkit-box-sizing      : border-box;
+    -moz-box-sizing         : border-box;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: "Noto Sans TC", Arial, Helvetica, "黑體-繁", "Heiti TC",
+        "微軟正黑體", "Microsoft JhengHei", 'Roboto', 'Karma', sans-serif;
+}
+
+/* "Noto Sans TC"goole fonts 思源黑體要排在第一順位，黑體才不會壞掉。 */
+
+img {
+    display: block;
+    width  : 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ---------------header---------------- */
+header {
+    position       : relative;
+    display        : flex;
+    justify-content: center;
+}
+
+.line {
+    background-image: radial-gradient(#0f62fe 0%, #262280 100%);
+    height          : .5vh;
+    width           : 100%;
+}
+
+
+.company_logo {
+    position: absolute;
+    display : inline-block;
+}
+
+.company_text {
+    padding-top   : 15px;
+    letter-spacing: 0.08rem;
+    /* 字體的間距 */
+    font-family   : 'Roboto', sans-serif;
+    color         : rgb(233, 233, 3);
+    /* nowrap對待空白字元的方式跟 normal 一樣，且會強制不換行。 */
+}
+
+.company_text span {
+    font-style  : italic;
+    padding-left: 10px;
+}
+
+
+@media (max-width: 767px) {
+    header {
+        background: rgb(33, 41, 116);
+    }
+
+    .company_logo {
+        width      : 38px;
+        padding-top: 8px;
+    }
+
+    .company_text {
+        padding-top : 15px;
+        font-size   : 1.1rem;
+        padding-left: 48px;
+        /* logo與文字之間 */
+    }
+}
+
+/* 平板 */
+@media (min-width: 768px) {
+    header {
+        background: rgb(33, 41, 116);
+    }
+
+    .company_logo {
+        width      : 43px;
+        padding-top: 11px;
+        margin     : 0 0 0 -60px;
+    }
+
+    .company_text {
+        padding-top  : 17px;
+        font-size    : 1.4rem;
+        padding-right: 0px;
+        /* logo與文字之間 */
+    }
+}
+
+/* 桌機版 */
+@media (min-width: 992px) {
+    header {
+        height    : 8vh;
+        background: rgb(33, 41, 116);
+    }
+
+    .company_text {
+        margin       : 0 0 0 -60px;
+        padding-left : 58px;
+        padding-right: 0px;
+    }
+
+    .company_logo {
+        width      : 45px;
+        padding-top: 11px;
+
+    }
+}
+
+/* ---------------aside---------------- */
+aside {
+    position      : absolute;
+    /* 浮動視窗 */
+    z-index       : 9999;
+    letter-spacing: .05rem;
+}
+
+#company_bar_email {
+    position          : fixed;
+    background-color  : rgb(167, 47, 236);
+    height            : 39px;
+    border-radius     : 22px 0 0 22px;
+    -webkit-transform : translate3d(219px, 0, 0);
+    -moz-transform    : translate3d(219px, 0, 0);
+    -o-transform      : translate3d(219px, 0, 0);
+    -ms-transform     : translate3d(219px, 0, 0);
+    transform         : translate3d(219px, 0, 0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -moz-transition   : -moz-transform 0.3s ease-in-out;
+    -o-transition     : -o-transform 0.3s ease-in-out;
+    -ms-transition    : -ms-transform 0.3s ease-in-out;
+    transition        : transform 0.3s ease-in-out;
+}
+
+#company_bar_email p,
+#company_bar_tel p {
+    display: inline-block;
+    color  : #fff;
+}
+
+#company_bar_tel {
+    position          : fixed;
+    background-color  : rgb(167, 47, 236);
+    height            : 39px;
+    border-radius     : 22px 0 0 22px;
+    width             : 200px;
+    -webkit-transform : translate3d(150px, 0, 0);
+    -moz-transform    : translate3d(150px, 0, 0);
+    -o-transform      : translate3d(150px, 0, 0);
+    -ms-transform     : translate3d(150px, 0, 0);
+    transform         : translate3d(150px, 0, 0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -moz-transition   : -moz-transform 0.3s ease-in-out;
+    -o-transition     : -o-transform 0.3s ease-in-out;
+    -ms-transition    : -ms-transform 0.3s ease-in-out;
+    transition        : transform 0.3s ease-in-out;
+}
+
+#company_bar_email:hover {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform   : translate3d(0, 0, 0);
+    -o-transform     : translate3d(0, 0, 0);
+    -ms-transform    : translate3d(0, 0, 0);
+    transform        : translate3d(0, 0, 0);
+}
+
+#company_bar_tel:hover {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform   : translate3d(0, 0, 0);
+    -o-transform     : translate3d(0, 0, 0);
+    -ms-transform    : translate3d(0, 0, 0);
+    transform        : translate3d(0, 0, 0);
+}
+
+i,
+i::before,
+i::after {
+    margin-right: 10px;
+    margin-left : 8px;
+    font-size   : 19px;
+    line-height : 2.1;
+    color       : rgb(243, 243, 243);
+}
+
+/* 手機版 */
+@media (max-width: 575.98px) {
+    #company_bar_email {
+        width: 280px;
+        right: -9px;
+        top  : 70px;
+    }
+
+    #company_bar_tel {
+        width: 211px;
+        right: -9px;
+        top  : 116px;
+    }
+}
+
+/* 手機版 */
+@media (max-width: 736px) {
+    #company_bar_email {
+        width: 280px;
+        right: -9px;
+        top  : 70px;
+    }
+
+    #company_bar_tel {
+        width: 211px;
+        right: -9px;
+        top  : 116px;
+    }
+}
+
+
+/* 平板 */
+@media (min-width: 768px) {
+    #company_bar_email {
+        width: 342px;
+        right: -67px;
+        top  : 245px;
+    }
+
+    #company_bar_tel {
+        width: 274px;
+        right: -67px;
+        top  : 294px;
+    }
+
+}
+
+/* 桌機版 */
+@media (min-width: 992px) {
+    #company_bar_email {
+        width: 271px;
+        right: 0px;
+        top  : 421px;
+    }
+
+    #company_bar_tel {
+        width: 200px;
+        right: 0px;
+        top  : 467px;
+    }
+}
+
+/* ------------------main----------------- */
+.img-object {
+    object-fit: cover;
+    width     : 100%;
+    height    : calc(100vh - 37.5vh)
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    border-radius: 6px
+}
+
+/* 手機版 */
+@media (max-width: 767px) {
+    .carousel-inner {
+        width: 100%;
+    }
+}
+
+/* -----------------section--------------- */
+.demo-primary {
+    font-family     : 'Roboto', sans-serif;
+    background-color: #0f62fe;
+    height          : 21vh;
+    letter-spacing  : 1.1px;
+    padding-right   : 60px;
+    padding-top     : 25px;
+}
+
+.demo-material-indigo {
+    font-family     : 'Roboto', sans-serif;
+    background-color: #262280;
+    height          : 21vh;
+    letter-spacing  : 1.1px;
+    padding-right   : 60px;
+    padding-top     : 25px;
+}
+
+.text-white {
+    padding-left: 30px;
+}
+
+/* ----------------footer--------------- */
+footer {
+
+    font-family     : "微軟正黑體";
+    padding         : 16px;
+    font-size       : .7rem;
+    font-style      : normal;
+    letter-spacing  : .05rem;
+    text-align      : center;
+    background-color: #ececec;
+    color           : #4D4D4D;
+}
+
+/* 手機版 */
+@media (max-width: 575.98px) {
+    footer {
+        padding: 8px;
+    }
+}
+
+
+/* 桌機版 */
+@media (min-width: 992px) {
+    footer {
+        height: 8vh;
+    }
+}
+
+/* -----------服務暨解決方案---------- */
+/* ----------------nav---------------- */
+nav {
+    width         : 100%;
+    font-family   : 'Karma', serif;
+    letter-spacing: .114em;
+}
+
+nav span {
+    background-color: #3399FE;
+    width           : 100%;
+    height          : 28px;
+    display         : flex;
+    flex-direction  : row;
+    align-items     : center;
+    padding-left    : 10px;
+    font-size       : .8rem;
+    cursor          : pointer;
+    box-shadow      : 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.nav_1 {
+    display         : flex;
+    justify-content : center;
+    list-style-type : none;
+    text-align      : center;
+    background-color: rgb(33, 41, 116);
+    font-weight     : bold;
+    line-height     : 2;
+    font-size       : 1.3em;
+}
+
+
+.nav_1 a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+
+.nav_1_2 {
+    background-color: #02014e;
+}
+
+.nav_2 {
+    display        : flex;
+    flex-direction : row;
+    justify-content: center;
+    background     : #bebebe;
+    height         : 77px;
+    list-style-type: none;
+    font-size      : 1.6em;
+    box-shadow     : 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+nav button {
+    border          : none;
+    border-left     : solid 1px #999;
+    box-shadow      : 1px 0px 0px #999;
+    background-color: #E4E7EC;
+    cursor          : pointer;
+    font-size       : 1rem;
+    line-height     : 1.4;
+    letter-spacing  : .114em;
+}
+
+
+
+.nav_2_1 {
+    border-bottom: solid 4px rgb(46, 0, 115)
+}
+
+
+
+/* 手機版 */
+@media (max-width: 575.98px) {
+    .nav_1 {
+        line-height: 1.5;
+        font-size  : 1.1em;
+    }
+
+    .nav_1 li {
+        padding: 10px 19px 10px 19px;
+    }
+
+    nav button {
+        padding: 17px 19px;
+    }
+}
+
+/* 平板 */
+@media (min-width: 768px) {
+    .nav_1 li {
+        padding: 10px 25px 5px 25px;
+    }
+
+    nav button {
+        padding: 15px 30px 17px 30px;
+    }
+    .nav_1 li:hover {
+        background-color: #1411a7;
+    }
+    .nav_2 button:hover {
+        border-bottom   : solid 4px rgb(15, 98, 254)
+    }
+}
+
+/* 桌機版 */
+@media (min-width: 992px) {
+    .nav_1 li {
+        padding: 10px 25px 5px 25px;
+    }
+
+    nav button {
+        padding: 15px 30px 17px 30px;
+    }
+    .nav_1 li:hover {
+        background-color: #FFFFFF;
+        color           : #4C2A71;
+        position        : relative;
+        background-color: #1411a7;
+    }
+    .nav_2 button:hover {
+        background-color: #FFFFFF;
+        color           : #4C2A71;
+        position        : relative;
+        border-bottom   : solid 4px rgb(15, 98, 254)
+    }
+}
+
+
+/* --------------gotop------------- */
+#gotop {
+    position        : fixed;
+    width           : 43px;
+    /* height       : 60px; */
+    background-color: rgba(68, 68, 68, 0.4);
+    bottom          : 82px;
+    right           : 30px;
+    cursor          : pointer;
+    border-radius   : 2px;
+}
+
+
+/* tab */
+#tabs {
+    background-color: white;
+}
+
+.ui-widget-content,
+.ui-tabs {
+    padding: 0;
+    border : none;
+}
+
+
+/* <!-----------手風琴-----------> */
+.heading-primary {
+    font-size : 2em;
+    padding   : 2em;
+    text-align: center;
+}
+
+.accordion dl,
+.accordion-list {
+    border: 1px solid #ddd;
+}
+
+.accordion dl:after,
+.accordion-list:after {
+    content         : "";
+    display         : block;
+    height          : 1em;
+    width           : 100%;
+    background-color: #050258;
+}
+
+
+.accordion dd,
+.accordion__panel {
+    background-color: #eee;
+    font-size       : 1em;
+    line-height     : 1.5em;
+}
+
+
+
+.accordion p {
+    padding: 1em 2em 1em 2em;
+}
+
+.accordion {
+    position        : relative;
+    background-color: #eee;
+}
+
+.container {
+    font-family: 'Karma', serif;
+    max-width: 960px;
+    margin   : 0 auto;
+    padding: 0;
+}
+
+.accordionTitle,
+.accordion__Heading {
+    background-color   : rgb(18, 25, 90);
+    /* text-align      : center; */
+    font-weight        : 700;
+    padding            : 2em;
+    display            : block;
+    text-decoration    : none;
+    color              : #fff;
+    transition         : background-color 0.5s ease-in-out;
+    border-bottom      : 1px solid #4c30bb;
+}
+
+.accordionTitle:before,
+.accordion__Heading:before {
+    /* content          : "◀"; */
+    /* font-size        : 1.0em; */
+    content          : "+";
+    font-size        : 1.5em;
+    /* line-height   : 0.5em; */
+    float            : right;
+    /* float         : left; */
+    transition       : transform 0.3s ease-in-out;
+}
+
+.accordionTitle:active,
+.accordion__Heading:active {
+    background-color: #4500f5;
+}
+
+.accordionTitleActive,
+.accordionTitle.is-expanded {
+    background-color: #2800c9;
+}
+
+.accordionTitleActive:before,
+.accordionTitle.is-expanded:before {
+    transform: rotate(-225deg);
+}
+
+.accordionItem {
+    height    : auto;
+    overflow  : hidden;
+    max-height: 50em;
+    transition: max-height 1s;
+}
+
+@media screen and (min-width: 48em) {
+    .accordionItem {
+        transition: max-height 0.5s;
+    }
+}
+
+.accordionItem.is-collapsed {
+    max-height: 0;
+}
+
+.no-js .accordionItem.is-collapsed {
+    max-height: auto;
+}
+
+.animateIn {
+    -webkit-animation: accordionIn 0.45s normal ease-in-out both 1;
+    animation        : accordionIn 0.45s normal ease-in-out both 1;
+}
+
+.animateOut {
+    -webkit-animation: accordionOut 0.45s alternate ease-in-out both 1;
+    animation        : accordionOut 0.45s alternate ease-in-out both 1;
+}
+
+@-webkit-keyframes accordionIn {
+    0% {
+        opacity         : 0;
+        transform       : scale(0.9) rotateX(-60deg);
+        transform-origin: 50% 0;
+    }
+
+    100% {
+        opacity  : 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes accordionIn {
+    0% {
+        opacity         : 0;
+        transform       : scale(0.9) rotateX(-60deg);
+        transform-origin: 50% 0;
+    }
+
+    100% {
+        opacity  : 1;
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes accordionOut {
+    0% {
+        opacity  : 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity  : 0;
+        transform: scale(0.9) rotateX(-60deg);
+    }
+}
+
+@keyframes accordionOut {
+    0% {
+        opacity  : 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity  : 0;
+        transform: scale(0.9) rotateX(-60deg);
+    }
+}
+
+
+iframe {
+    display : block;
+    margin  : 0 auto 30px auto;
+    overflow: hidden;
+}
+
+dt {
+    /* 多行省略語法 */
+    overflow          : hidden;
+    text-align        : justify;
+    text-overflow     : ellipsis;
+    display           : -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+}
+
+/* 手機版 */
+@media (max-width: 575.98px) {
+    iframe {
+        width     : 84%;
+        height    : 0%;
+        text-align: justify;
+    }
+
+    .accordionTitle:active,
+    .accordion__Heading:active {
+        background-color: #4500f5;
+    }
+}
+
+/* 平板 */
+@media (min-width: 768px) {
+    iframe {
+        width : 90%;
+        height: 459px;
+    }
+}
